@@ -9,4 +9,5 @@ import Foundation
 
 public class FriendsFeatureAPIClient: FriendsFeatureAPI {
     
+    public init() {}
 }

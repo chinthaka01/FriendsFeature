@@ -9,4 +9,5 @@ import Foundation
 
 public class FriendsDependenciesImpl: FriendsDependencies {
     
+    public init() {}
 }
