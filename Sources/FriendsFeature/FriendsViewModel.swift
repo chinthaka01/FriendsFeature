@@ -6,8 +6,21 @@
 //
 
 import Foundation
+import PlatformKit
 
-class FriendsViewModel {
+@MainActor
+final class FriendsViewModel: ObservableObject {
+    let api: any FriendsFeatureAPI
+    let analytics: any Analytics
     
-    public init() {}
+    @Published var friendsDTO: FriendsDTOImpl?
+
+    init(api: FriendsFeatureAPI, analytics: Analytics) {
+        self.api = api
+        self.analytics = analytics
+    }
+    
+    func loadFriends() {
+
+    }
 }

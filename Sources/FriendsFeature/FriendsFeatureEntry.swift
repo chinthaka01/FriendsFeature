@@ -3,22 +3,22 @@ import UIKit
 import PlatformKit
 import DesignSystem
 
-public struct FriendsFeatureEntry: MicroFeature {
-    public let id = "friends"
-    public let title = "Friends"
-    public let tabIcon: UIImage
+struct FriendsFeatureEntry: @MainActor MicroFeature {
+    let id = "friends"
+    let title = "Friends"
+    let tabIcon: UIImage
+    let selectedTabIcon: UIImage
 
     private let dependencies: FriendsDependencies
 
-    public init(
-        dependencies: FriendsDependencies,
-        tabIcon: UIImage = UIImage(systemName: "banknote")!
-    ) {
+    init(dependencies: FriendsDependencies) {
         self.dependencies = dependencies
-        self.tabIcon = tabIcon
+        self.tabIcon = UIImage(systemName: "person.3")!
+        self.selectedTabIcon = UIImage(systemName: "person.3")!
     }
 
-    public func makeRootView() -> AnyView {
+    @MainActor
+    func makeRootView() -> AnyView {
         let viewModel = FriendsViewModel(
             api: dependencies.friendsAPI,
             analytics: dependencies.analytics

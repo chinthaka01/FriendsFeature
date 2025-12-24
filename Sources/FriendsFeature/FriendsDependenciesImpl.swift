@@ -6,8 +6,15 @@
 //
 
 import Foundation
+import PlatformKit
 
-public class FriendsDependenciesImpl: FriendsDependencies {
+final public class FriendsDependenciesImpl: FriendsDependencies {
+    public let friendsAPI: any FriendsFeatureAPI
+    public let analytics: any Analytics
     
-    public init() {}
+    
+    public init(friendsAPI: FriendsFeatureAPI, analytics: Analytics) {
+        self.friendsAPI = friendsAPI
+        self.analytics = analytics
+    }
 }

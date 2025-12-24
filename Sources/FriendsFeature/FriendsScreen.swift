@@ -12,15 +12,16 @@ struct FriendsScreen: View {
     @ObservedObject var viewModel: FriendsViewModel
 
     var body: some View {
-        List(viewModel.friends) { friend in
-            VStack(alignment: .leading) {
-                Text(friend.name)
-                    .font(.headline)
-                Text(friend.formattedBalance)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-            }
-        }
+//        List(viewModel.friends) { friend in
+//            VStack(alignment: .leading) {
+//                Text(friend.name)
+//                    .font(.headline)
+//                Text(friend.formattedBalance)
+//                    .font(.subheadline)
+//                    .foregroundColor(.secondary)
+//            }
+//        }
+        Text("")
         .navigationTitle("Friends")
         .onAppear {
             viewModel.loadFriends()

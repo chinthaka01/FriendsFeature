@@ -6,8 +6,12 @@
 //
 
 import Foundation
+import PlatformKit
 
-public class FriendsFeatureAPIClient: FriendsFeatureAPI {
-    
+public final class FriendsFeatureAPIClient: FriendsFeatureAPI {
     public init() {}
+
+    public func fetchFeeds() async throws -> any FriendsDTO {
+        return FriendsDTOImpl()
+    }
 }
