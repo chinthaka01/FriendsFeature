@@ -24,7 +24,9 @@ struct FriendsScreen: View {
         Text("")
         .navigationTitle("Friends")
         .onAppear {
-            viewModel.loadFriends()
+            Task {
+                await viewModel.loadFriends()
+            }
         }
     }
 }

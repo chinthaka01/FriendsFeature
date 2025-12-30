@@ -9,9 +9,23 @@ import Foundation
 import PlatformKit
 
 public final class FriendsFeatureAPIClient: FriendsFeatureAPI {
-    public init() {}
+    
+    private let bffBase = "https://jsonplaceholder.typicode.com"
+    
+    public let networking: Networking
 
-    public func fetchFeeds() async throws -> any FriendsDTO {
-        return FriendsDTOImpl()
+    public init(networking: Networking) {
+        self.networking = networking
+    }
+
+    public func fetchFriends() async throws -> [User]? {
+        let url = "\(bffBase)/users"
+
+        let users = try await networking.fetchList(
+            url: url,
+            type: User.self
+        )
+        
+        return users
     }
 }
