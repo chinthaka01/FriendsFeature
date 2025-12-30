@@ -22,7 +22,14 @@ final class FriendsViewModel: ObservableObject {
     
     func loadFriends() async {
         do {
-            friends = try await api.fetchFriends()
+            let allUsers = try await api.fetchFriends()
+            
+            guard let allUsers = allUsers, allUsers.isEmpty else {
+                return
+            }
+
+            // We are considering the user with the id 1 as the profile.
+            friends = allUsers.filter { $0.id != 1 }
         } catch {
             print("Failed to load friends: \(error)")
         }
