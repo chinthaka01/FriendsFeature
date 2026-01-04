@@ -22,7 +22,7 @@ struct FriendsScreen: View {
             } else if viewModel.friends.isEmpty {
                 emptyView()
             } else {
-                FriendsListView(friends: viewModel.friends)
+                FriendsListView(friends: viewModel.friends, analytics: viewModel.analytics)
             }
         }
         .navigationTitle("Friends")
@@ -39,6 +39,7 @@ struct FriendsScreen: View {
 
 struct FriendsListView: View {
     let friends: [User]
+    let analytics: Analytics
 
     var body: some View {
         ScrollView {
@@ -50,6 +51,11 @@ struct FriendsListView: View {
                         FriendCard(user: user)
                     }
                     .buttonStyle(.plain)
+                    .simultaneousGesture(TapGesture().onEnded {
+                        analytics.track(
+                            .itemSelected(id: user.id, type: .friend, pageName: .friends)
+                        )
+                    })
                 }
             }
             .padding(.vertical, DSSpacing.sm)
