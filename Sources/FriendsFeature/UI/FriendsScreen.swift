@@ -10,6 +10,9 @@ import SwiftUI
 import PlatformKit
 import DesignSystem
 
+/// Main screen for the Friends feature.
+///
+/// Drives the UI based on the state in `FriendsViewModel`.
 struct FriendsScreen: View {
     @ObservedObject var viewModel: FriendsViewModel
 
@@ -37,6 +40,9 @@ struct FriendsScreen: View {
     }
 }
 
+/// List of friends rendered as cards with navigation to a detail screen.
+///
+/// Also fires an `itemSelected` analytics event when a friend is tapped.
 struct FriendsListView: View {
     let friends: [User]
     let analytics: Analytics
@@ -63,6 +69,7 @@ struct FriendsListView: View {
     }
 }
 
+/// Small card used to display a friend in the list.
 struct FriendCard: View {
     let user: User
 
@@ -89,6 +96,8 @@ struct FriendCard: View {
 }
 
 private extension FriendsScreen {
+    
+    /// Standard error view with a retry button.
     func errorView(_ error: Error) -> some View {
         ContentUnavailableView {
             Label("Unable to Load Friends", systemImage: "exclamationmark.triangle.fill")
@@ -106,6 +115,8 @@ private extension FriendsScreen {
 }
 
 private extension FriendsScreen {
+    
+    /// Empty state shown when there are no friends to display.
     func emptyView() -> some View {
         ContentUnavailableView {
             Label("No Friends", systemImage: "person.2.slash")

@@ -10,6 +10,9 @@ import SwiftUI
 import PlatformKit
 import DesignSystem
 
+/// Detail screen shown when a friend is selected from the list.
+///
+/// Displays basic profile information along with address and company details.
 struct FriendDetailScreen: View {
     let user: User
 
