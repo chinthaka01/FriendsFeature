@@ -6,9 +6,9 @@
 
 ## What this feature demonstrates
 
-- Using a **micro‑frontend entry type** (`FriendsFeatureEntry`) and a **factory** (`FriendsFeatureFactory`) to plug a feature into the host app without tight coupling.[29]
+- Using a **micro‑frontend entry type** (`FriendsFeatureEntry`) and a **factory** (`FriendsFeatureFactory`) to plug a feature into the host app without tight coupling.
 - Loading friend data from a **BFF endpoint** via a feature‑specific API protocol (`FriendsFeatureAPI`).
-- A simple **view‑model‑driven SwiftUI screen** with loading, error, empty, and content states.[30]
+- A simple **view‑model‑driven SwiftUI screen** with loading, error, empty, and content states.
 - **Analytics integration** using a shared `Analytics` abstraction, including an `itemSelected` event when a friend is tapped.
 - Clean **dependency injection** through a `FriendsDependencies` protocol and `FriendsDependenciesImpl` container.
 
@@ -83,15 +83,15 @@ This separation keeps networking and UI decoupled and makes the feature easy to 
 
 - `FriendsRootView`  
   - Holds `FriendsViewModel` via `@StateObject`.  
-  - Sets up a `NavigationStack` and hosts `FriendsScreen`.[28]
+  - Sets up a `NavigationStack` and hosts `FriendsScreen`.
 
 - `FriendsScreen`  
   - Renders one of four states: loading, error, empty, or content (friends list).  
-  - Triggers `loadFriends()` on first appear and on pull‑to‑refresh.[29]
+  - Triggers `loadFriends()` on first appear and on pull‑to‑refresh.
 
 - `FriendsListView`  
   - Displays a scrollable list of friends using `FriendCard`.  
-  - Wraps each card in a navigation link to `FriendDetailScreen` and fires an `itemSelected` analytics event when tapped.[30]
+  - Wraps each card in a navigation link to `FriendDetailScreen` and fires an `itemSelected` analytics event when tapped.
 
 - `FriendCard`  
   - Shows a friend’s avatar, name, and website using `DesignSystem` components.
@@ -102,7 +102,7 @@ This separation keeps networking and UI decoupled and makes the feature easy to 
     - Header with avatar, website, and `@username`.  
     - “Address” section with street, suite, city, and zip code.  
     - “Company” section with company name, catch phrase, and business summary.  
-  - Uses `DSSection`, typography, and colors from the design system so the detail view feels consistent with the rest of the app.[30]
+  - Uses `DSSection`, typography, and colors from the design system so the detail view feels consistent with the rest of the app.
 
 The UI is built entirely with `DesignSystem` tokens so it matches other features visually.
 
