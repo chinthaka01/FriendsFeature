@@ -70,7 +70,7 @@ private extension FriendDetailScreen {
                 .foregroundColor(DSColor.secondaryText)
         }
         .frame(maxWidth: .infinity)
-        .padding(.vertical, DSSpacing.lg)
+        .padding(DSSpacing.lg)
         .background(
             RoundedRectangle(cornerRadius: 16)
                 .fill(Color(DSColor.card))
