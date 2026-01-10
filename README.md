@@ -138,3 +138,23 @@ TabView {
 ```
 
 With this setup, the Friends feature remains fully modular and replaceable: only its factory and dependency protocol surface to the shell, while all implementation details stay inside the `FriendsFeature` package.
+
+***
+
+## The Other Related Repositories
+
+### Shell App:
+Shell - https://github.com/chinthaka01/Wefriendz
+
+### Shared contracts:
+PlatformKit - https://github.com/chinthaka01/PlatformKit
+DesignSystem - https://github.com/chinthaka01/DesignSystem
+
+### Micro Frontends:
+Feed Feature - https://github.com/chinthaka01/FeedFeature
+Profile Feature - https://github.com/chinthaka01/ProfileFeature
+
+### Isolate Feature Testing Apps:
+Feed Feature Testing App - https://github.com/chinthaka01/FeedFeatureApp
+Friends Feature Testing App - https://github.com/chinthaka01/FriendsFeatureApp
+Profile Feature Testing App - https://github.com/chinthaka01/ProfileFeatureApp
