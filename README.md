@@ -150,7 +150,7 @@ Shell - https://github.com/chinthaka01/Wefriendz
 PlatformKit - https://github.com/chinthaka01/PlatformKit
 DesignSystem - https://github.com/chinthaka01/DesignSystem
 
-### Micro Frontends:
+### Feature Modules:
 Feed Feature - https://github.com/chinthaka01/FeedFeature
 Profile Feature - https://github.com/chinthaka01/ProfileFeature
 
